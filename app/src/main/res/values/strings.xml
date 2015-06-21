@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AreYouAlive</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_activity2">MainActivity2</string>
+    <string name="title_activity_activity3">Activity3</string>
+    <string name="title_activity_activity4">Activity4</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

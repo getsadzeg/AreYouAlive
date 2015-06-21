@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="none.areyoualive.Activity2">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:touchscreenBlocksFocus="false"
+        android:background="#ffededed"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:nestedScrollingEnabled="false">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Situation"
+            android:textSize="30sp"
+            android:textColor="#ff0d00ff"
+            android:id="@+id/textView4"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:textSize="27sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Disabled"
+            android:checked="false"
+            android:layout_marginLeft="20dp"
+            android:onClick="radioButtonOnClick"
+            android:nestedScrollingEnabled="false" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:textSize="27sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Bad"
+            android:layout_marginLeft="20dp"
+            android:onClick="radioButtonOnClick"
+            android:nestedScrollingEnabled="false" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:textSize="27sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Good"
+            android:layout_marginLeft="20dp"
+            android:onClick="radioButtonOnClick"
+            android:nestedScrollingEnabled="false" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="I want.."
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bullets"
+        android:id="@+id/button"
+        android:layout_marginTop="59dp"
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:background="#F44336"
+        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:onClick="bulletsButtonOnClick" />
+
+    <Button
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Help"
+        android:id="@+id/button2"
+        android:background="#2196F3"
+        android:layout_alignTop="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:onClick="medicalhelpButtonOnClick" />
+
+    <Button
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Human Resources"
+        android:id="@+id/button3"
+        android:background="#2E7D32"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
+        android:layout_toEndOf="@+id/button2"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:onClick="humanresourcesButtonOnClick" />
+
+    <Button
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food - Water"
+        android:id="@+id/button4"
+        android:background="#FF6F00"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginTop="30dp"
+        android:onClick="productButtonOnClick" />
+
+
+</RelativeLayout>
+
+
