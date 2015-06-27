@@ -17,7 +17,7 @@ AreYouAlive არის ინოვაციური მეთოდი ი�
 Challengepost: http://challengepost.com/software/areyoualive
 
 # For English Speakers
-Project named AreYouAlive contains two applications - Web and Mobile,in particular,it's platform is Android(minimum version - 4.0.3). You can see web application's demo - www.areyoualive.org
+Project named AreYouAlive contains two applications - Web and Mobile,in particular,it's platform is Android(minimum required version - 4.0.3). You can see web application's demo - www.areyoualive.org
 
 AreYouAlive is an innovative method to communicate with the government on a special mission to the unit. Government just have to secure their network and provide internet connectivity. I'll explain what is AreYouAlive's content.
 
