@@ -15,7 +15,7 @@ AreYouAlive არის ინოვაციური მეთოდი ი�
 Challengepost: http://challengepost.com/software/areyoualive
 
 # For English Speakers
-Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (Minimum version 4.0.3). You can see web appliacation demo here - www.areyoualive.org
+Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (Minimum required version 4.0.3). You can see web appliacation demo here - www.areyoualive.org
 
 "AreYouAlive" is innovative method to let government connect to unit sent to special operation. Government only needs to protect the connection and provide soldiers with internet connection. 
 
@@ -25,7 +25,7 @@ While special operation, soldier can point their Status at any time i.e. what do
 
 For demonstration, we also added Information tab into the app, which learns soldier how to do all of this.
 
-This project is hackathons' (hackTSU) one of the winner.
+This project is hackathon's (hackTSU) one of the winner.
 
 Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
 Challengepost Subbmision: http://challengepost.com/software/areyoualive
