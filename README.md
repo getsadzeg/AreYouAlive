@@ -9,28 +9,23 @@ AreYouAlive არის ინოვაციური მეთოდი ი�
 
 სადემონსტრაციოდ დავამატეთ Information,რომელიც ასე თუ ისე "ასწავლის" ჯარისკაცს როგორ უნდა გააკეთოს ეს ყველაფერი.
 
-მომავალში იგეგმება აპლიკაციის გაფართოება ექსკურსიების და ლაშქრობების მხრივ და ასევე უამრავი კარგი ფუნქციის დამატება.
-
 პროექტი არის ჰაკათონ hackTSU-ს ერთ-ერთი გამარჯვებული.
 
 სადემონსტრაციო ვიდეო:  https://www.youtube.com/watch?v=Emdr7-N7jkw
 Challengepost: http://challengepost.com/software/areyoualive
 
-# For English Speakers
-Project named AreYouAlive contains two applications - Web and Mobile,in particular,it's platform is Android(minimum required version - 4.0.3). You can see web application's demo - www.areyoualive.org
+# For English Speaker
+Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (Minimum version 4.0.3). You can see web appliacation demo here - www.areyoualive.org
 
-AreYouAlive is an innovative method to communicate with the government on a special mission to the unit. Government just have to secure their network and provide internet connectivity. I'll explain what is AreYouAlive's content.
+"AreYouAlive" is innovative method to let government connect to unit sent to special operation. Government only needs to protect the connection and provide soldiers with internet connection. 
 
-Government provides internet connectivity and it's security. After that unit install application on Android device. Then they deliver them to the units. Before units go to the special mission,they authenticate to application with their name and specially selected password. So password's security depends on government. Units' names are included to the database from the beginning. This is soldier's authentication.
+First of all, government will provide internet connection and security. Next, our app will be installed on Android smartphones, which later will be sent to soldiers. Before they'll go to special operation, soldiers need to authorize to app with their name and special password, which will be generated on server. Government also need to make password secure. Soldiers' names will already be in database. This is how soldier authorization happening.
 
-After the departure of units,soldiers(let me call them "soldiers" sometimes) can anytime indicate their conditions(Status) or what they need,e.g. bullets,food,water etc.,soldier can view connected soldiers - The people,who are with him on the mission. Also soldier can view their status and messages,about what they need. This eases communication between soldiers. Application controls if internet is enabled(Mobile Data or Wi-Fi) and Location services(GPS),too.
+While special operation, soldier can point their Status at any time i.e. what do they need, for example bullets, food, water, etc. Also, soldier can see another connected soldiers - i.e. soldiers which are with him in operation. Soldier can also see their Location and Message, i.e. what they need. This make connection between soldiers easier. Application also controls if internet (Mobile Data or Wi-Fi) and Location services (GPS) are turned on.
 
-For demonstration we added "Information" in the menu,which teaches soldier how to use application.
+For demonstration, we also added Information tab into the app, which learns soldier how to do all of this.
 
-We are planning to expand our application with excursions and hiking modes and also other good features.
+This project is hackathons' (hackTSU) one of the winner.
 
-AreYouAlive is hackathon named hack@TSU's one of the winners.
-
-Demonstration video: https://www.youtube.com/watch?v=Emdr7-N7jkw
-Challengepost: http://challengepost.com/software/areyoualive
-
+Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
+Challengepost Subbmision: http://challengepost.com/software/areyoualive
