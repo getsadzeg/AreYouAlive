@@ -9,6 +9,8 @@ AreYouAlive არის ინოვაციური მეთოდი ი�
 
 სადემონსტრაციოდ დავამატეთ Information,რომელიც ასე თუ ისე "ასწავლის" ჯარისკაცს როგორ უნდა გააკეთოს ეს ყველაფერი.
 
+AreYouAlive წარმოადგენს ღია წყაროს სახის პროექტს და შექმნილია MIT ლიცენზიის ფარგლებში
+
 პროექტი არის ჰაკათონ hackTSU-ს ერთ-ერთი გამარჯვებული.
 
 სადემონსტრაციო ვიდეო:  https://www.youtube.com/watch?v=Emdr7-N7jkw
@@ -24,6 +26,8 @@ First of all, government will provide internet connection and security. Next, ou
 While special operation, soldier can point their Status at any time i.e. what do they need, for example bullets, food, water, etc. Also, soldier can see another connected soldiers - i.e. soldiers which are with him in operation. Soldier can also see their Location and Message, i.e. what they need. This make connection between soldiers easier. Application also controls if internet (Mobile Data or Wi-Fi) and Location services (GPS) are turned on.
 
 For demonstration, we also added Information tab into the app, which learns soldier how to do all of this.
+
+AreYouAlive is represented as open-source project and created under MIT license.
 
 This project is hackathon's (hackTSU) one of the winner.
 
