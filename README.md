@@ -9,12 +9,12 @@ AreYouAlive არის ინოვაციური მეთოდი ი�
 
 სადემონსტრაციოდ დავამატეთ Information,რომელიც ასე თუ ისე "ასწავლის" ჯარისკაცს როგორ უნდა გააკეთოს ეს ყველაფერი.
 
-AreYouAlive წარმოადგენს ღია წყაროს სახის პროექტს და შექმნილია MIT ლიცენზიის ფარგლებში
+AreYouAlive წარმოადგენს ღია წყაროს სახის პროექტს და შექმნილია MIT ლიცენზიის ფარგლებში.
 
 პროექტი არის ჰაკათონ hackTSU-ს ერთ-ერთი გამარჯვებული.
 
 სადემონსტრაციო ვიდეო:  https://www.youtube.com/watch?v=Emdr7-N7jkw
-Challengepost: http://challengepost.com/software/areyoualive
+Devpost: http://devpost.com/software/areyoualive
 
 # For English Speakers
 Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (Minimum required version 4.0.3). You can see web appliacation demo here - www.areyoualive.org
@@ -32,4 +32,4 @@ AreYouAlive is represented as open-source project and created under MIT license.
 This project is hackathon's (hackTSU) one of the winner.
 
 Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
-Challengepost Subbmision: http://challengepost.com/software/areyoualive
+Devpost Subbmision: http://devpost.com/software/areyoualive

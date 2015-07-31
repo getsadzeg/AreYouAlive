@@ -1,5 +1,5 @@
 # Mobile
-Mobile application is originally developed by Guricopperfield and MIrzaJiji.
+Mobile application is originally developed by getsadzeg and MIrzaJiji.
 AreYouAlive's logo and design are developed by DroidTwe4kz.
 
 # Web
