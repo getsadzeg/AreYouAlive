@@ -33,3 +33,8 @@ This project is hackathon's (hackTSU) one of the winner.
 
 Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
 Devpost Subbmision: http://devpost.com/software/areyoualive
+
+#TODO
+- A Map
+- Better Password Checking
+- Raise Soldiers' Number
