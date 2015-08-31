@@ -26,7 +26,7 @@ public class ServiceGenerator {
         }
         client.setCache(cache);
         RestAdapter.Builder builder = new RestAdapter.Builder()
-                .setEndpoint("http://example.org/")
+                .setEndpoint("http://areyoualive.org/")
                 .setConverter(new LoganSquareConverter())
                 .setClient(new OkClient(client))
                 .setLogLevel(RestAdapter.LogLevel.FULL);
