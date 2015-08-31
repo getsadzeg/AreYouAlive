@@ -38,3 +38,4 @@ Devpost Subbmision: http://devpost.com/software/areyoualive
 - A Map
 - Better Password Checking
 - Raise Soldiers' Number
+- Better UI(Maybe)
