@@ -6,5 +6,5 @@ AreYouAlive's logo and design are developed by DroidTwe4kz.
 Web application is originally developed by alexandergorgadze.
 
 # Contributors
-Special thanks for tatocaster and TGIO for contributing.
+Special thanks for tatocaster, TGIO and Lukakva for contributing.
 Thanks to VaxoMusxelishili for his great support.
