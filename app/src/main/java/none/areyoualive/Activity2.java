@@ -124,6 +124,8 @@ public class Activity2 extends ActionBarActivity {
             case R.id.info:
                 startActivity(new Intent(Activity2.this, Activity4.class));
                 break;
+            case R.id.map:
+                startActivity(new Intent(Activity2.this, MapsActivity.class));
         }
 
         return true;

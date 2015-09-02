@@ -1,65 +1,82 @@
 package none.areyoualive;
-
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.widget.ListView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
-public class MapsActivity extends FragmentActivity {
-
-    private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoadedCallback, GoogleMap.OnMarkerClickListener {
+    SoldierServices ss;
+    double longitude = 0.0;
+    double latitude = 0.0;
+    double longitude1 = 0.0;
+    double latitude1 = 0.0;
+    String markerName;
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        ss = ServiceGenerator.createService(SoldierServices.class, this);
+        ss.getSoldiers(new Callback<SoldierResponse>() {
+            @Override
+            public void success(SoldierResponse soldierResponse, Response response) {
+                System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
+                longitude = soldierResponse.soldiers.get(0).Longitude;
+                latitude = soldierResponse.soldiers.get(0).Latitude;
+                longitude1 = soldierResponse.soldiers.get(1).Longitude;
+                latitude1 = soldierResponse.soldiers.get(1).Latitude;
+                if(MainActivity.userstring.equals(soldierResponse.soldiers.get(0).Name)) markerName = soldierResponse.soldiers.get(1).Name;
+                else markerName = soldierResponse.soldiers.get(0).Name;
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                System.out.println("error = " + error);
+            }
+
+        });
         setUpMapIfNeeded();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
-
-    /**
-     * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
-     * installed) and the map has not already been instantiated.. This will ensure that we only ever
-     * call {@link #setUpMap()} once when {@link #mMap} is not null.
-     * <p/>
-     * If it isn't installed {@link SupportMapFragment} (and
-     * {@link com.google.android.gms.maps.MapView MapView}) will show a prompt for the user to
-     * install/update the Google Play services APK on their device.
-     * <p/>
-     * A user can return to this FragmentActivity after following the prompt and correctly
-     * installing/updating/enabling the Google Play services. Since the FragmentActivity may not
-     * have been completely destroyed during this process (it is likely that it would only be
-     * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
-     * method in {@link #onResume()} to guarantee that it will be called.
-     */
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
+            mMap.setOnMapLoadedCallback(this);
+            mMap.setOnMarkerClickListener(this);
         }
     }
 
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+    @Override
+    public void onMapLoaded() {
+        LatLng location = new LatLng(latitude, longitude);
+        LatLng location1 = new LatLng(latitude1, longitude1);
+        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.userstring));
+        mMap.addMarker(new MarkerOptions().position(location1).title(markerName));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+        CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
+        mMap.animateCamera(Location);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        return false;
     }
 }
