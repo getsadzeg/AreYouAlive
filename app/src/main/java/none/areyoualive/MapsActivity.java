@@ -40,8 +40,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
                 latitude = soldierResponse.soldiers.get(0).Latitude;
                 longitude1 = soldierResponse.soldiers.get(1).Longitude;
                 latitude1 = soldierResponse.soldiers.get(1).Latitude;
-                if(MainActivity.userstring.equals(soldierResponse.soldiers.get(0).Name)) markerName = soldierResponse.soldiers.get(1).Name;
-                else markerName = soldierResponse.soldiers.get(0).Name;
             }
 
             @Override
@@ -68,8 +66,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
     public void onMapLoaded() {
         LatLng location = new LatLng(latitude, longitude);
         LatLng location1 = new LatLng(latitude1, longitude1);
-        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.userstring));
-        mMap.addMarker(new MarkerOptions().position(location1).title(markerName));
+        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.name));
+        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.name1));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
         CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
         mMap.animateCamera(Location);
