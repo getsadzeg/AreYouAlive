@@ -35,7 +35,7 @@ Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
 Devpost Subbmision: http://devpost.com/software/areyoualive
 
 #TODO
-- A Map
+- A Map(Solved)
 - Better Password Checking
 - Raise Soldiers' Number
 - Better UI(Maybe)
