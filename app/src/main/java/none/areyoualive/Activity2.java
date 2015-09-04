@@ -28,6 +28,8 @@ public class Activity2 extends ActionBarActivity {
     SoldierServices ss;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println(MainActivity.names[0]);
+        System.out.println(MainActivity.names[1]);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
         ss = ServiceGenerator.createService(SoldierServices.class, this);
@@ -38,53 +40,53 @@ public class Activity2 extends ActionBarActivity {
         switch(view.getId()) {
             case R.id.radioButton:
                 if (checked) {
-                    if (MainActivity.userstring.equals(MainActivity.name))
-                        updateInfo(1, MainActivity.name, "Disabled", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
-                    if(MainActivity.userstring.equals(MainActivity.name1))
-                        updateInfo(2, MainActivity.name1, "Disabled", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
+                    if (MainActivity.userstring.equals(MainActivity.names[0]))
+                        updateInfo(1, MainActivity.names[0], "Disabled", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
+                    if(MainActivity.userstring.equals(MainActivity.names[1]))
+                        updateInfo(2, MainActivity.names[1], "Disabled", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
                 }
                 break;
             case R.id.radioButton2:
                 if(checked) {
-                    if (MainActivity.userstring.equals(MainActivity.name))
-                        updateInfo(1, MainActivity.name, "Bad", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
-                    if(MainActivity.userstring.equals(MainActivity.name1))
-                        updateInfo(2, MainActivity.name1, "Bad", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
+                    if (MainActivity.userstring.equals(MainActivity.names[0]))
+                        updateInfo(1, MainActivity.names[0], "Bad", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
+                    if(MainActivity.userstring.equals(MainActivity.names[1]))
+                        updateInfo(2, MainActivity.names[1], "Bad", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
                 }
                 break;
             case R.id.radioButton3:
                 if(checked) {
-                    if (MainActivity.userstring.equals(MainActivity.name))
-                        updateInfo(1, MainActivity.name, "Good", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
-                    if(MainActivity.userstring.equals(MainActivity.name1))
-                        updateInfo(2, MainActivity.name1, "Good", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
+                    if (MainActivity.userstring.equals(MainActivity.names[0]))
+                        updateInfo(1, MainActivity.names[0], "Good", MainActivity.message, MainActivity.longitude, MainActivity.latitude);
+                    if(MainActivity.userstring.equals(MainActivity.names[1]))
+                        updateInfo(2, MainActivity.names[1], "Good", MainActivity.message1, MainActivity.longitude1, MainActivity.latitude1);
                 }
                 break;
         }
     }
     public void bulletsButtonOnClick(View a) {
-        if (MainActivity.userstring.equals(MainActivity.name))
-            updateInfo(1, MainActivity.name, MainActivity.status, "Need Bullets", MainActivity.longitude, MainActivity.latitude);
-        if(MainActivity.userstring.equals(MainActivity.name1))
-            updateInfo(2, MainActivity.name1, MainActivity.status1, "Need Bullets", MainActivity.longitude1, MainActivity.latitude1);
+        if (MainActivity.userstring.equals(MainActivity.names[0]))
+            updateInfo(1, MainActivity.names[0], MainActivity.status, "Need Bullets", MainActivity.longitude, MainActivity.latitude);
+        if(MainActivity.userstring.equals(MainActivity.names[1]))
+            updateInfo(2, MainActivity.names[1], MainActivity.status1, "Need Bullets", MainActivity.longitude1, MainActivity.latitude1);
     }
     public void medicalhelpButtonOnClick(View b) {
-        if (MainActivity.userstring.equals(MainActivity.name))
-            updateInfo(1, MainActivity.name, MainActivity.status, "Need Medical Help", MainActivity.longitude, MainActivity.latitude);
-        if(MainActivity.userstring.equals(MainActivity.name1))
-            updateInfo(2, MainActivity.name1, MainActivity.status1, "Need Medical Help", MainActivity.longitude1, MainActivity.latitude1);
+        if (MainActivity.userstring.equals(MainActivity.names[0]))
+            updateInfo(1, MainActivity.names[0], MainActivity.status, "Need Medical Help", MainActivity.longitude, MainActivity.latitude);
+        if(MainActivity.userstring.equals(MainActivity.names[1]))
+            updateInfo(2, MainActivity.names[1], MainActivity.status1, "Need Medical Help", MainActivity.longitude1, MainActivity.latitude1);
     }
     public void humanresourcesButtonOnClick(View c) {
-        if (MainActivity.userstring.equals(MainActivity.name))
-            updateInfo(1, MainActivity.name, MainActivity.status, "Need Human Resources", MainActivity.longitude, MainActivity.latitude);
-        if(MainActivity.userstring.equals(MainActivity.name1))
-            updateInfo(2, MainActivity.name1, MainActivity.status1, "Need Human Resources", MainActivity.longitude1, MainActivity.latitude1);
+        if (MainActivity.userstring.equals(MainActivity.names[0]))
+            updateInfo(1, MainActivity.names[0], MainActivity.status, "Need Human Resources", MainActivity.longitude, MainActivity.latitude);
+        if(MainActivity.userstring.equals(MainActivity.names[1]))
+            updateInfo(2, MainActivity.names[1], MainActivity.status1, "Need Human Resources", MainActivity.longitude1, MainActivity.latitude1);
     }
     public void productButtonOnClick(View d) {
-        if (MainActivity.userstring.equals(MainActivity.name))
-            updateInfo(1, MainActivity.name, MainActivity.status, "Need Food & Water", MainActivity.longitude, MainActivity.latitude);
-        if(MainActivity.userstring.equals(MainActivity.name1))
-            updateInfo(2, MainActivity.name1, MainActivity.status1, "Need Food & Water", MainActivity.longitude1, MainActivity.latitude1);
+        if (MainActivity.userstring.equals(MainActivity.names[0]))
+            updateInfo(1, MainActivity.names[0], MainActivity.status, "Need Food & Water", MainActivity.longitude, MainActivity.latitude);
+        if(MainActivity.userstring.equals(MainActivity.names[1]))
+            updateInfo(2, MainActivity.names[1], MainActivity.status1, "Need Food & Water", MainActivity.longitude1, MainActivity.latitude1);
     }
     private void updateInfo(int id, String name, String status, String message, double longitude, double latitude) {
         ss.updateInfo(id, name, status, message, longitude, latitude, new Callback<UpdateInfoResponse>() {
@@ -124,8 +126,6 @@ public class Activity2 extends ActionBarActivity {
             case R.id.info:
                 startActivity(new Intent(Activity2.this, Activity4.class));
                 break;
-            case R.id.map:
-                startActivity(new Intent(Activity2.this, MapsActivity.class));
         }
 
         return true;

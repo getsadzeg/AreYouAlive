@@ -25,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
     GPSTracker gpsTracker;
 
     SoldierServices ss;
+    public static String[] names = new String[12];
     public static String name = "";
     public static String name1 = "";
     public static String status = "";
@@ -67,12 +68,12 @@ public class MainActivity extends ActionBarActivity {
             public void success(SoldierResponse soldierResponse, Response response) {
                 System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
                 for (int i = 0; i < soldierResponse.soldiers.size(); i++) {
-                    name = soldierResponse.soldiers.get(0).Name;
+                    names[0] = soldierResponse.soldiers.get(0).Name;
                     status = soldierResponse.soldiers.get(0).Status;
                     message = soldierResponse.soldiers.get(0).Message;
                     longitude = gpsTracker.getLongitude();
                     latitude = gpsTracker.getLatitude();
-                    name1 = soldierResponse.soldiers.get(1).Name;
+                    names[1] = soldierResponse.soldiers.get(1).Name;
                     status1 = soldierResponse.soldiers.get(1).Status;
                     message1 = soldierResponse.soldiers.get(1).Message;
                     longitude1 = gpsTracker.getLongitude();
@@ -140,7 +141,7 @@ public class MainActivity extends ActionBarActivity {
         password = (EditText) findViewById(R.id.editText2);
         //password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         userstring = username.getText().toString();
-        if (password.getText().toString().equals("lala") && username.getText().toString().equals(name) || username.getText().toString().equals(name1)) {
+        if (password.getText().toString().equals("lala") && username.getText().toString().equals(names[0]) || username.getText().toString().equals(names[1])) {
             startActivity(new Intent(MainActivity.this, Activity2.class));
             finish();
         } else {
@@ -156,7 +157,6 @@ public class MainActivity extends ActionBarActivity {
     private boolean haveNetworkConnection() {
         boolean haveConnectedWifi = false;
         boolean haveConnectedMobile = false;
-
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo[] netInfo = cm.getAllNetworkInfo();
         for (NetworkInfo ni : netInfo) {

@@ -1,19 +1,14 @@
 package none.areyoualive;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -24,7 +19,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
     double latitude = 0.0;
     double longitude1 = 0.0;
     double latitude1 = 0.0;
-    String markerName;
     private GoogleMap mMap;
 
     @Override
@@ -67,7 +61,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
         LatLng location = new LatLng(latitude, longitude);
         LatLng location1 = new LatLng(latitude1, longitude1);
         mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.name));
-        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.name1));
+        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.name));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
         CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
         mMap.animateCamera(Location);
