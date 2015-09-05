@@ -15,10 +15,6 @@ import retrofit.client.Response;
 
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoadedCallback, GoogleMap.OnMarkerClickListener {
     SoldierServices ss;
-    double longitude = 0.0;
-    double latitude = 0.0;
-    double longitude1 = 0.0;
-    double latitude1 = 0.0;
     private GoogleMap mMap;
 
     @Override
@@ -30,10 +26,10 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
             @Override
             public void success(SoldierResponse soldierResponse, Response response) {
                 System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
-                longitude = soldierResponse.soldiers.get(0).Longitude;
-                latitude = soldierResponse.soldiers.get(0).Latitude;
-                longitude1 = soldierResponse.soldiers.get(1).Longitude;
-                latitude1 = soldierResponse.soldiers.get(1).Latitude;
+                MainActivity.longitudes[0] = soldierResponse.soldiers.get(0).Longitude;
+                MainActivity.latitudes[0] = soldierResponse.soldiers.get(0).Latitude;
+                MainActivity.longitudes[1] = soldierResponse.soldiers.get(1).Longitude;
+                MainActivity.latitudes[1] = soldierResponse.soldiers.get(1).Latitude;
             }
 
             @Override
@@ -58,10 +54,10 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
 
     @Override
     public void onMapLoaded() {
-        LatLng location = new LatLng(latitude, longitude);
-        LatLng location1 = new LatLng(latitude1, longitude1);
-        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.name));
-        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.name));
+        LatLng location = new LatLng(MainActivity.latitudes[0], MainActivity.longitudes[0]);
+        LatLng location1 = new LatLng(MainActivity.latitudes[1], MainActivity.longitudes[1]);
+        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.names[0]));
+        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.names[1]));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
         CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
         mMap.animateCamera(Location);

@@ -69,18 +69,18 @@ public class Activity3 extends ActionBarActivity {
 
                 // ListView Clicked item value
                 if (itemPosition == 1) {
-                    itemStatus = MainActivity.status;
-                    itemMessage = MainActivity.message;
+                    itemStatus = MainActivity.statuses[0];
+                    itemMessage = MainActivity.messages[0];
                 }
                 if (itemPosition == 2) {
-                    itemStatus = MainActivity.status1;
-                    itemMessage = MainActivity.message1;
+                    itemStatus = MainActivity.statuses[1];
+                    itemMessage = MainActivity.messages[1];
                 }
                 System.out.println(itemStatus);
 
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
-                        "Id :" + itemPosition + "," + "  Status : " + itemStatus + "," + "  Message: " + itemMessage, Toast.LENGTH_LONG)
+                        "Id : " + itemPosition + "," + "  Status : " + itemStatus + "," + "  Message: " + itemMessage, Toast.LENGTH_LONG)
                         .show();
             }
 
