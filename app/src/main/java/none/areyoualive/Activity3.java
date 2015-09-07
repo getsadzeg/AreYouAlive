@@ -11,20 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.lang.String;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import com.gc.materialdesign.widgets.Dialog;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 public class Activity3 extends ActionBarActivity {
     ListView listView;
     SoldierServices ss;
-    String test3 = "";
-    String test4 = "";
-    String status = "";
-    String status1 = "";
+    String namewithyou;
     String[] values = {""};
     private ArrayAdapter arrayAdapter;
     @Override
@@ -36,15 +29,11 @@ public class Activity3 extends ActionBarActivity {
         ss.getSoldiers(new Callback<SoldierResponse>() {
             @Override
             public void success(SoldierResponse soldierResponse, Response response) {
-                System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
-                test3 = soldierResponse.soldiers.get(0).Name;
-                test4 = soldierResponse.soldiers.get(1).Name;
-                System.out.println(MainActivity.userstring);
-                if(MainActivity.userstring.equals(test3)) test3 = test3 + " (you)";
-                if(MainActivity.userstring.equals(test4)) test4 = test4 + " (you)";
-                values = new String[]{test3, test4};
-                status = soldierResponse.soldiers.get(0).Status;
-                status1 = soldierResponse.soldiers.get(1).Status;
+                for(int i=0; i<MainActivity.soldierSize; i++) {
+                    if (MainActivity.userstring.equals(MainActivity.names[i])) MainActivity.names[i] = MainActivity.names[i] + " (you)";
+                    values = new String[]{MainActivity.names[0],MainActivity.names[1],MainActivity.names[2], MainActivity.names[3], MainActivity.names[4]};
+                    MainActivity.statuses[i] = soldierResponse.soldiers.get(i).Status;
+                }
                 dealwithit();
             }
 
@@ -81,6 +70,31 @@ public class Activity3 extends ActionBarActivity {
                     itemStatus = MainActivity.statuses[1];
                     itemMessage = MainActivity.messages[1];
                 }
+                if(itemPosition == 3) {
+                    itemStatus = MainActivity.statuses[2];
+                    itemMessage = MainActivity.messages[2];
+                }
+                if(itemPosition == 4) {
+                    itemStatus = MainActivity.statuses[3];
+                    itemMessage = MainActivity.messages[3];
+                }
+                if(itemPosition == 5) {
+                    itemStatus = MainActivity.statuses[4];
+                    itemMessage = MainActivity.messages[4];
+                }
+                /*if(itemPosition == 6) {
+                    itemStatus = MainActivity.statuses[5];
+                    itemMessage = MainActivity.messages[5];
+                }
+                if(itemPosition == 7) {
+                    itemStatus = MainActivity.statuses[6];
+                    itemMessage = MainActivity.messages[6];
+                }
+                if(itemPosition == 8) {
+                    itemStatus = MainActivity.statuses[7];
+                    itemMessage = MainActivity.messages[7];
+                }
+                */
                 System.out.println(itemStatus);
 
                 // Show Alert
