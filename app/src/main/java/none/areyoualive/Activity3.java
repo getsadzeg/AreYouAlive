@@ -1,5 +1,6 @@
 package none.areyoualive;
 
+import none.areyoualive.MainActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.lang.String;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+import com.gc.materialdesign.widgets.Dialog;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -80,7 +85,7 @@ public class Activity3 extends ActionBarActivity {
 
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
-                        "Id : " + itemPosition + "," + "  Status : " + itemStatus + "," + "  Message: " + itemMessage, Toast.LENGTH_LONG)
+                        "Id :" + itemPosition + "," + "  Status : " + itemStatus + "," + "  Message: " + itemMessage, Toast.LENGTH_LONG)
                         .show();
             }
 
@@ -90,13 +95,19 @@ public class Activity3 extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_activity3, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -105,4 +116,3 @@ public class Activity3 extends ActionBarActivity {
     }
 
 }
-

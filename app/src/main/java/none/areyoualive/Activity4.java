@@ -14,7 +14,7 @@ TextView textview;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity4);
         textview = (TextView) findViewById(R.id.textView5);
-        String text = "The GPS Information is sending when you click one of the  radiobutton. You can choose your condition from there. ";
+        String text = "The GPS Information is sending when you click one of the radiobutton. You can choose your condition from there. ";
         String text1 = "You can send information with buttons about what you need,e.g.Bullets,Medical Help.";
         textview.setText(text + text1);
     }

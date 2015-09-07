@@ -21,7 +21,7 @@ import retrofit.client.Response;
 public class MainActivity extends ActionBarActivity {
     EditText password;
     EditText username;
-
+    public static int soldierSize;
     GPSTracker gpsTracker;
 
     SoldierServices ss;
@@ -60,81 +60,13 @@ public class MainActivity extends ActionBarActivity {
         ss.getSoldiers(new Callback<SoldierResponse>() {
             @Override
             public void success(SoldierResponse soldierResponse, Response response) {
-                System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
+                soldierSize = soldierResponse.soldiers.size();
                 for (int i = 0; i < soldierResponse.soldiers.size(); i++) {
-                    if(soldierResponse.soldiers.size() == 1) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        break;
-                    }
-                    else if(soldierResponse.soldiers.size() == 2) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        names[1] = soldierResponse.soldiers.get(1).Name;
-                        break;
-                    }
-                    else if(soldierResponse.soldiers.size() == 3) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        names[1] = soldierResponse.soldiers.get(1).Name;
-                        names[2] = soldierResponse.soldiers.get(2).Name;
-                        break;
-                    }
-                    else if(soldierResponse.soldiers.size() == 4) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        names[1] = soldierResponse.soldiers.get(1).Name;
-                        names[2] = soldierResponse.soldiers.get(2).Name;
-                        names[3] = soldierResponse.soldiers.get(3).Name;
-                        break;
-                    }
-                    else if(soldierResponse.soldiers.size() == 5) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        names[1] = soldierResponse.soldiers.get(1).Name;
-                        names[2] = soldierResponse.soldiers.get(2).Name;
-                        names[3] = soldierResponse.soldiers.get(3).Name;
-                        names[4] = soldierResponse.soldiers.get(4).Name;
-                        break;
-                    }
-                    else if(soldierResponse.soldiers.size() == 6) {
-                        names[0] = soldierResponse.soldiers.get(0).Name;
-                        names[1] = soldierResponse.soldiers.get(1).Name;
-                        names[2] = soldierResponse.soldiers.get(2).Name;
-                        names[3] = soldierResponse.soldiers.get(3).Name;
-                        names[4] = soldierResponse.soldiers.get(4).Name;
-                        names[5] = soldierResponse.soldiers.get(5).Name;
-                    }
-                    //names[5] = soldierResponse.soldiers.get(5).Name;
-                    //names[6] = soldierResponse.soldiers.get(6).Name;
-                    //names[7] = soldierResponse.soldiers.get(7).Name;
-                    statuses[0] = soldierResponse.soldiers.get(0).Status;
-                    statuses[1] = soldierResponse.soldiers.get(1).Status;
-                    statuses[2] = soldierResponse.soldiers.get(2).Status;
-                    statuses[3] = soldierResponse.soldiers.get(3).Status;
-                    statuses[4] = soldierResponse.soldiers.get(4).Status;
-                    //statuses[5] = soldierResponse.soldiers.get(5).Status;
-                    //statuses[6] = soldierResponse.soldiers.get(6).Status;
-                    //statuses[7] = soldierResponse.soldiers.get(7).Status;
-                    messages[0] = soldierResponse.soldiers.get(0).Message;
-                    messages[1] = soldierResponse.soldiers.get(1).Message;
-                    messages[2] = soldierResponse.soldiers.get(2).Message;
-                    messages[3] = soldierResponse.soldiers.get(3).Message;
-                    messages[4] = soldierResponse.soldiers.get(4).Message;
-                    //messages[5] = soldierResponse.soldiers.get(5).Message;
-                    //messages[6] = soldierResponse.soldiers.get(6).Message;
-                    //messages[7] = soldierResponse.soldiers.get(7).Message;
-                    longitudes[0] = gpsTracker.getLongitude();
-                    longitudes[1] = gpsTracker.getLongitude();
-                    longitudes[2] = gpsTracker.getLongitude();
-                    longitudes[3] = gpsTracker.getLongitude();
-                    longitudes[4] = gpsTracker.getLongitude();
-                    //longitudes[5] = gpsTracker.getLongitude();
-                    //longitudes[6] = gpsTracker.getLongitude();
-                    //longitudes[7] = gpsTracker.getLongitude();
-                    latitudes[0] = gpsTracker.getLatitude();
-                    latitudes[1] = gpsTracker.getLatitude();
-                    latitudes[2] = gpsTracker.getLatitude();
-                    latitudes[3] = gpsTracker.getLatitude();
-                    latitudes[4] = gpsTracker.getLatitude();
-                    //latitudes[5] = gpsTracker.getLatitude();
-                    //latitudes[6] = gpsTracker.getLatitude();
-                    //latitudes[7] = gpsTracker.getLatitude();
+                    names[i] = soldierResponse.soldiers.get(i).Name;
+                    statuses[i] = soldierResponse.soldiers.get(i).Status;
+                    messages[i] = soldierResponse.soldiers.get(i).Message;
+                    longitudes[i] = gpsTracker.getLongitude();
+                    latitudes[i] = gpsTracker.getLatitude();
                 }
 
             }
@@ -196,7 +128,8 @@ public class MainActivity extends ActionBarActivity {
         username = (EditText) findViewById(R.id.editText1);
         password = (EditText) findViewById(R.id.editText2);
         userstring = username.getText().toString();
-        if (password.getText().toString().equals("lala") && username.getText().toString().equals(names[0]) || username.getText().toString().equals(names[1])) {
+        System.out.println(soldierSize);
+        if (password.getText().toString().equals("lala") && username.getText().toString().equals(names[0]) || username.getText().toString().equals(names[3])) {
             startActivity(new Intent(MainActivity.this, Activity2.class));
             finish();
         }
@@ -213,9 +146,9 @@ public class MainActivity extends ActionBarActivity {
             finish();
         }
         else {
-            Dialog dialog = new Dialog(this, "SOS", "You're trying to access our data. Go to hell. Regards.");
-            dialog.show();
-        }
+                Dialog dialog = new Dialog(this, "SOS", "You're trying to access our data. Go to hell. Regards.");
+                dialog.show();
+            }
     }
 
     public String getUserstring() {

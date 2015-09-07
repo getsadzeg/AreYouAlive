@@ -40,80 +40,66 @@ public class Activity2 extends ActionBarActivity {
         switch(view.getId()) {
             case R.id.radioButton:
                 if (checked) {
-                    if (MainActivity.userstring.equals(MainActivity.names[0])) {
-                        MainActivity.statuses[0] = "Disabled";
-                        updateInfo(1, MainActivity.names[0], "Disabled", MainActivity.messages[0], MainActivity.longitudes[0], MainActivity.latitudes[0]);
-                    }
-                    if(MainActivity.userstring.equals(MainActivity.names[1])) {
-                        MainActivity.statuses[1] = "Disabled";
-                        updateInfo(2, MainActivity.names[1], "Disabled", MainActivity.messages[1], MainActivity.longitudes[1], MainActivity.latitudes[1]);
+                    for(int i=0; i<MainActivity.soldierSize; i++) {
+                        if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                            MainActivity.statuses[i] = "Disabled";
+                            updateInfo(i+1, MainActivity.names[i], "Disabled", MainActivity.messages[i], MainActivity.longitudes[i], MainActivity.latitudes[i]);
+                        }
                     }
                 }
                 break;
             case R.id.radioButton2:
                 if(checked) {
-                    if (MainActivity.userstring.equals(MainActivity.names[0])) {
-                        MainActivity.statuses[0] = "Bad";
-                        updateInfo(1, MainActivity.names[0], "Bad", MainActivity.messages[0], MainActivity.longitudes[0], MainActivity.latitudes[0]);
-                    }
-                    if(MainActivity.userstring.equals(MainActivity.names[1])) {
-                        MainActivity.statuses[1] = "Bad";
-                        updateInfo(2, MainActivity.names[1], "Bad", MainActivity.messages[1], MainActivity.longitudes[1], MainActivity.latitudes[1]);
+                    for(int i=0; i<MainActivity.soldierSize; i++) {
+                        if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                            MainActivity.statuses[i] = "Bad";
+                            updateInfo(i+1, MainActivity.names[i], "Bad", MainActivity.messages[i], MainActivity.longitudes[i], MainActivity.latitudes[i]);
+                        }
                     }
                 }
                 break;
             case R.id.radioButton3:
                 if(checked) {
-                    if (MainActivity.userstring.equals(MainActivity.names[0])) {
-                        MainActivity.statuses[0] = "Good";
-                        updateInfo(1, MainActivity.names[0], "Good", MainActivity.messages[0], MainActivity.longitudes[0], MainActivity.latitudes[0]);
-                    }
-                    if(MainActivity.userstring.equals(MainActivity.names[1])) {
-                        MainActivity.statuses[1] = "Good";
-                        updateInfo(2, MainActivity.names[1], "Good", MainActivity.messages[1], MainActivity.longitudes[1], MainActivity.latitudes[1]);
+                    for(int i=0; i<MainActivity.soldierSize; i++) {
+                        if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                            MainActivity.statuses[i] = "Good";
+                            updateInfo(i+1, MainActivity.names[i], "Good", MainActivity.messages[i], MainActivity.longitudes[i], MainActivity.latitudes[i]);
+                        }
                     }
                 }
                 break;
         }
     }
     public void bulletsButtonOnClick(View a) {
-        if (MainActivity.userstring.equals(MainActivity.names[0])) {
-            MainActivity.messages[0] = "Need Bullets";
-            updateInfo(1, MainActivity.names[0], MainActivity.statuses[0], "Need Bullets", MainActivity.longitudes[0], MainActivity.latitudes[0]);
-        }
-        if(MainActivity.userstring.equals(MainActivity.names[1])) {
-            MainActivity.messages[1] = "Need Bullets";
-            updateInfo(2, MainActivity.names[1], MainActivity.statuses[1], "Need Bullets", MainActivity.longitudes[1], MainActivity.latitudes[1]);
+        for(int i=0; i<MainActivity.soldierSize; i++) {
+            if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                MainActivity.messages[i] = "Need Bullets";
+                updateInfo(i+1, MainActivity.names[i], MainActivity.statuses[i], "Need Bullets", MainActivity.longitudes[i], MainActivity.latitudes[i]);
+            }
         }
     }
     public void medicalhelpButtonOnClick(View b) {
-        if (MainActivity.userstring.equals(MainActivity.names[0])) {
-            MainActivity.messages[0] = "Need Medical Help";
-            updateInfo(1, MainActivity.names[0], MainActivity.statuses[0], "Need Medical Help", MainActivity.longitudes[0], MainActivity.latitudes[0]);
-        }
-        if(MainActivity.userstring.equals(MainActivity.names[1])) {
-            MainActivity.messages[1] = "Need Medical Help";
-            updateInfo(2, MainActivity.names[1], MainActivity.statuses[1], "Need Medical Help", MainActivity.longitudes[1], MainActivity.latitudes[1]);
+        for(int i=0; i<MainActivity.soldierSize; i++) {
+            if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                MainActivity.messages[i] = "Need Medical Help";
+                updateInfo(i+1, MainActivity.names[i], MainActivity.statuses[i], "Need Medical Help", MainActivity.longitudes[i], MainActivity.latitudes[i]);
+            }
         }
     }
     public void humanresourcesButtonOnClick(View c) {
-        if (MainActivity.userstring.equals(MainActivity.names[0])) {
-            MainActivity.messages[0] = "Need Human Resources";
-            updateInfo(1, MainActivity.names[0], MainActivity.statuses[0], "Need Human Resources", MainActivity.longitudes[0], MainActivity.latitudes[0]);
-        }
-        if(MainActivity.userstring.equals(MainActivity.names[1])) {
-            MainActivity.messages[1] = "Need Human Resources";
-            updateInfo(2, MainActivity.names[1], MainActivity.statuses[1], "Need Human Resources", MainActivity.longitudes[1], MainActivity.latitudes[1]);
+        for(int i=0; i<MainActivity.soldierSize; i++) {
+            if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                MainActivity.messages[i] = "Need Food & Water";
+                updateInfo(i+1, MainActivity.names[i], MainActivity.statuses[i], "Need Food & Water", MainActivity.longitudes[i], MainActivity.latitudes[i]);
+            }
         }
     }
     public void productButtonOnClick(View d) {
-        if (MainActivity.userstring.equals(MainActivity.names[0])) {
-            MainActivity.messages[0] = "Need Food & Water";
-            updateInfo(1, MainActivity.names[0], MainActivity.statuses[0], "Need Food & Water", MainActivity.longitudes[0], MainActivity.latitudes[0]);
-        }
-        if(MainActivity.userstring.equals(MainActivity.names[1])) {
-            MainActivity.messages[1] = "Need Food & Water";
-            updateInfo(2, MainActivity.names[1], MainActivity.statuses[1], "Need Food & Water", MainActivity.longitudes[1], MainActivity.latitudes[1]);
+        for(int i=0; i<MainActivity.soldierSize; i++) {
+            if (MainActivity.userstring.equals(MainActivity.names[i])) {
+                MainActivity.messages[i] = "Need Food & Water";
+                updateInfo(i+1, MainActivity.names[i], MainActivity.statuses[i], "Need Food & Water", MainActivity.longitudes[i], MainActivity.latitudes[i]);
+            }
         }
     }
     private void updateInfo(int id, String name, String status, String message, double longitude, double latitude) {
