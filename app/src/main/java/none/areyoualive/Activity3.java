@@ -57,44 +57,15 @@ public class Activity3 extends ActionBarActivity {
                                     int position, long id) {
                 String itemStatus = "";
                 String itemMessage = "";
-
                 // ListView Clicked item index
                 int itemPosition = position + 1;
+                for(int i=0; i<MainActivity.soldierSize; i++) {
+                    if(itemPosition == i+1) {
+                        itemStatus = MainActivity.statuses[i];
+                        itemMessage = MainActivity.messages[i];
+                    }
 
-                // ListView Clicked item value
-                if (itemPosition == 1) {
-                    itemStatus = MainActivity.statuses[0];
-                    itemMessage = MainActivity.messages[0];
                 }
-                if (itemPosition == 2) {
-                    itemStatus = MainActivity.statuses[1];
-                    itemMessage = MainActivity.messages[1];
-                }
-                if(itemPosition == 3) {
-                    itemStatus = MainActivity.statuses[2];
-                    itemMessage = MainActivity.messages[2];
-                }
-                if(itemPosition == 4) {
-                    itemStatus = MainActivity.statuses[3];
-                    itemMessage = MainActivity.messages[3];
-                }
-                if(itemPosition == 5) {
-                    itemStatus = MainActivity.statuses[4];
-                    itemMessage = MainActivity.messages[4];
-                }
-                /*if(itemPosition == 6) {
-                    itemStatus = MainActivity.statuses[5];
-                    itemMessage = MainActivity.messages[5];
-                }
-                if(itemPosition == 7) {
-                    itemStatus = MainActivity.statuses[6];
-                    itemMessage = MainActivity.messages[6];
-                }
-                if(itemPosition == 8) {
-                    itemStatus = MainActivity.statuses[7];
-                    itemMessage = MainActivity.messages[7];
-                }
-                */
                 System.out.println(itemStatus);
 
                 // Show Alert
