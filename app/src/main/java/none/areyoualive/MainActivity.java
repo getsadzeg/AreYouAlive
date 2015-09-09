@@ -21,20 +21,15 @@ import retrofit.client.Response;
 public class MainActivity extends ActionBarActivity {
     EditText password;
     EditText username;
-
+    public static int soldierSize;
     GPSTracker gpsTracker;
 
     SoldierServices ss;
-    public static String name = "";
-    public static String name1 = "";
-    public static String status = "";
-    public static String status1 = "";
-    public static String message = "";
-    public static String message1 = "";
-    public static double longitude;
-    public static double longitude1;
-    public static double latitude;
-    public static double latitude1;
+    public static String[] names = new String[8];
+    public static String[] statuses = new String[8];
+    public static String[] messages = new String[8];
+    public static double[] longitudes = new double[8];
+    public static double[] latitudes = new double[8];
     public static String userstring;
 
     @Override
@@ -56,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
 
         }
         if (!haveNetworkConnection()) {
-            Toast.makeText(getApplicationContext(), "Please check your internet connection. Cannot retrieve from database.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please check your internet connection. Cannot connect to database.", Toast.LENGTH_LONG).show();
             finish();
         }
         username = (EditText) findViewById(R.id.editText1);
@@ -65,19 +60,13 @@ public class MainActivity extends ActionBarActivity {
         ss.getSoldiers(new Callback<SoldierResponse>() {
             @Override
             public void success(SoldierResponse soldierResponse, Response response) {
-                System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
+                soldierSize = soldierResponse.soldiers.size();
                 for (int i = 0; i < soldierResponse.soldiers.size(); i++) {
-                    name = soldierResponse.soldiers.get(0).Name;
-                    status = soldierResponse.soldiers.get(0).Status;
-                    message = soldierResponse.soldiers.get(0).Message;
-                    longitude = gpsTracker.getLongitude();
-                    latitude = gpsTracker.getLatitude();
-                    name1 = soldierResponse.soldiers.get(1).Name;
-                    status1 = soldierResponse.soldiers.get(1).Status;
-                    message1 = soldierResponse.soldiers.get(1).Message;
-                    longitude1 = gpsTracker.getLongitude();
-                    latitude1 = gpsTracker.getLatitude();
-                    //System.out.println("soldierResponse output is " + soldierResponse.soldiers.get(i).Name);
+                    names[i] = soldierResponse.soldiers.get(i).Name;
+                    statuses[i] = soldierResponse.soldiers.get(i).Status;
+                    messages[i] = soldierResponse.soldiers.get(i).Message;
+                    longitudes[i] = gpsTracker.getLongitude();
+                    latitudes[i] = gpsTracker.getLatitude();
                 }
 
             }
@@ -138,15 +127,28 @@ public class MainActivity extends ActionBarActivity {
     public void buttonflatOnClick(View v) {
         username = (EditText) findViewById(R.id.editText1);
         password = (EditText) findViewById(R.id.editText2);
-        //password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         userstring = username.getText().toString();
-        if (password.getText().toString().equals("lala") && username.getText().toString().equals(name) || username.getText().toString().equals(name1)) {
+        System.out.println(soldierSize);
+        if (password.getText().toString().equals("lala") && username.getText().toString().equals(names[0]) || username.getText().toString().equals(names[3])) {
             startActivity(new Intent(MainActivity.this, Activity2.class));
             finish();
-        } else {
-            Dialog dialog = new Dialog(this, "SOS", "You're trying to access our servers. Go to hell. Regards.");
-            dialog.show();
         }
+        else if(password.getText().toString().equals("lala") && username.getText().toString().equals(names[2]) || username.getText().toString().equals(names[3])) {
+            startActivity(new Intent(MainActivity.this, Activity2.class));
+            finish();
+        }
+        else if(password.getText().toString().equals("lala") && username.getText().toString().equals(names[4]) || username.getText().toString().equals(names[5])) {
+            startActivity(new Intent(MainActivity.this, Activity2.class));
+            finish();
+        }
+        else if(password.getText().toString().equals("lala") && username.getText().toString().equals(names[6]) || username.getText().toString().equals(names[7])) {
+            startActivity(new Intent(MainActivity.this, Activity2.class));
+            finish();
+        }
+        else {
+                Dialog dialog = new Dialog(this, "SOS", "You're trying to access our data. Go to hell. Regards.");
+                dialog.show();
+            }
     }
 
     public String getUserstring() {
@@ -156,7 +158,6 @@ public class MainActivity extends ActionBarActivity {
     private boolean haveNetworkConnection() {
         boolean haveConnectedWifi = false;
         boolean haveConnectedMobile = false;
-
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo[] netInfo = cm.getAllNetworkInfo();
         for (NetworkInfo ni : netInfo) {

@@ -1,32 +1,22 @@
 package none.areyoualive;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoadedCallback, GoogleMap.OnMarkerClickListener {
     SoldierServices ss;
-    double longitude = 0.0;
-    double latitude = 0.0;
-    double longitude1 = 0.0;
-    double latitude1 = 0.0;
-    String markerName;
     private GoogleMap mMap;
-
+    LatLng location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +26,10 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
             @Override
             public void success(SoldierResponse soldierResponse, Response response) {
                 System.out.println("soldierResponse.soldiers.size() = " + soldierResponse.soldiers.size());
-                longitude = soldierResponse.soldiers.get(0).Longitude;
-                latitude = soldierResponse.soldiers.get(0).Latitude;
-                longitude1 = soldierResponse.soldiers.get(1).Longitude;
-                latitude1 = soldierResponse.soldiers.get(1).Latitude;
+                for (int i = 0; i < soldierResponse.soldiers.size(); i++) {
+                    MainActivity.longitudes[i] = soldierResponse.soldiers.get(i).Longitude;
+                    MainActivity.latitudes[i] = soldierResponse.soldiers.get(i).Latitude;
+                }
             }
 
             @Override
@@ -64,13 +54,13 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
 
     @Override
     public void onMapLoaded() {
-        LatLng location = new LatLng(latitude, longitude);
-        LatLng location1 = new LatLng(latitude1, longitude1);
-        mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.name));
-        mMap.addMarker(new MarkerOptions().position(location1).title(MainActivity.name1));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-        CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
-        mMap.animateCamera(Location);
+        for(int i=0; i<MainActivity.soldierSize; i++) {
+            LatLng location = new LatLng(MainActivity.latitudes[i], MainActivity.longitudes[i]);
+            mMap.addMarker(new MarkerOptions().position(location).title(MainActivity.names[i]));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+            CameraUpdate Location = CameraUpdateFactory.newLatLngZoom(location, 10);
+            mMap.animateCamera(Location);
+        }
     }
 
     @Override

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context="none.areyoualive.Activity2">
         <item
             android:id="@+id/connectedsoldiers"
-            android:title="ConnectedSoldiers"/>
+            android:title="Connected Soldiers"/>
         <item
             android:id="@+id/info"
             android:title="Information"/>
