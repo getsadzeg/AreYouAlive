@@ -36,6 +36,6 @@ Devpost Subbmision: http://devpost.com/software/areyoualive
 
 #TODO
 - A Map(Solved)
-- Better Password Checking(Solved)
-- Raise Soldiers' Number
+- Better Password Checking
+- Raise Soldiers' Number(Solved)
 - Better UI(Maybe)
