@@ -45,9 +45,6 @@ public class MainActivity extends ActionBarActivity {
         } else {
             Toast.makeText(getApplicationContext(), "Please check your location settings.", Toast.LENGTH_LONG).show();
             finish();
-            // can't get location
-            // GPS or Network is not enabled
-            // Ask user to enable GPS/network in settings
 
         }
         if (!haveNetworkConnection()) {
@@ -78,7 +75,6 @@ public class MainActivity extends ActionBarActivity {
             }
 
         });
-        // updateInfo(1, "guri", "alive", "test", "5", "5");
     }
 
     private void updateInfo(int id, String name, String status, String message, long longitude, long latitude) {
@@ -103,16 +99,12 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

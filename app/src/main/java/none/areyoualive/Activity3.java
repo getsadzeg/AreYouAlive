@@ -1,6 +1,5 @@
 package none.areyoualive;
 
-import none.areyoualive.MainActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +16,6 @@ import retrofit.client.Response;
 public class Activity3 extends ActionBarActivity {
     ListView listView;
     SoldierServices ss;
-    String namewithyou;
     String[] values = {""};
     private ArrayAdapter arrayAdapter;
     @Override
@@ -47,9 +45,7 @@ public class Activity3 extends ActionBarActivity {
     public void dealwithit() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
-        // Assign adapter to ListView
         listView.setAdapter(adapter);
-        // ListView Item Click Listener
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -57,7 +53,6 @@ public class Activity3 extends ActionBarActivity {
                                     int position, long id) {
                 String itemStatus = "";
                 String itemMessage = "";
-                // ListView Clicked item index
                 int itemPosition = position + 1;
                 for(int i=0; i<MainActivity.soldierSize; i++) {
                     if(itemPosition == i+1) {
@@ -87,12 +82,7 @@ public class Activity3 extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

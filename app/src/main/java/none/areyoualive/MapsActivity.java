@@ -16,7 +16,6 @@ import retrofit.client.Response;
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoadedCallback, GoogleMap.OnMarkerClickListener {
     SoldierServices ss;
     private GoogleMap mMap;
-    LatLng location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +41,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLoa
     }
 
     private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
             mMap.setOnMapLoadedCallback(this);

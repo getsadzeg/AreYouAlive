@@ -4,20 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.gc.materialdesign.views.ButtonFlat;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.content.Intent;
-import android.widget.Button;
-import android.view.View.OnClickListener;
-import android.app.Activity;
-import android.widget.EditText;
-import com.gc.materialdesign.widgets.Dialog;
-import com.baoyz.widget.PullRefreshLayout;
-import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.view.MenuInflater;
-import android.widget.Toast;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -125,9 +115,6 @@ public class Activity2 extends ActionBarActivity {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_activity2, menu);
         return super.onCreateOptionsMenu(menu);
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_activity2, menu);
-        //return true;
     }
 
     @Override
@@ -146,15 +133,4 @@ public class Activity2 extends ActionBarActivity {
 
         return true;
     }
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    //int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
-    // if (id == R.id.action_settings) {
-    //return true;
-    // }
-
-    //return super.onOptionsItemSelected(item);
 }
