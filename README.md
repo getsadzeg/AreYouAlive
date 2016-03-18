@@ -1,5 +1,5 @@
 # AreYouAlive
-პროექტი AreYouAlive შეიცავს ორ აპლიკაციას - Web და Mobile,კერძოდ კი მისი პლატფორმაა - ანდროიდი(ვერსია მინიმუმი - 4.0.3). ვებ აპლიკაციის დემო შეგიძლიათ იხილოთ - www.areyoualive.org(ამჯერად არააქტიურია).
+პროექტი AreYouAlive შეიცავს ორ აპლიკაციას - Web და Mobile,კერძოდ კი მისი პლატფორმაა - ანდროიდი(ვერსია მინიმუმი - 4.0.3). ვებ აპლიკაციის დემო შეგიძლიათ იხილოთ - www.areyoualive.org (ამჯერად არააქტიურია).
 
 AreYouAlive არის ინოვაციური მეთოდი იმისა,რომ მთავრობა სპეციალურ დავალებაზე გაგზავნილ რაზმს დაუკავშირდეს. მთავრობას მხოლოდ და მხოლოდ მოეთხოვება საკუთარი ქსელის დაცვა და ინტერნეტით უზრუნველყოფა. ახლა ავხსნი,თუ რა იგულისხმება და რაში მდგომარეობს AreYouAlive-ს აზრი.
 
@@ -17,7 +17,7 @@ AreYouAlive წარმოადგენს ღია წყაროს ს�
 - Devpost: http://devpost.com/software/areyoualive
 
 # For English Speakers
-Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (minimum required version 4.0.3). You can see web application demo here - www.areyoualive.org(inactive for now).
+Project "AreYouAlive" contains two applications - Web and Mobile, especially for Android (minimum required version 4.0.3). You can see web application demo here - www.areyoualive.org (inactive for now).
 
 "AreYouAlive" is innovative method to let government connect to unit sent to special operation. Government only needs to protect the connection and provide soldiers with internet connection.
 
