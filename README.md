@@ -15,3 +15,7 @@ This project is hackathon's (hackTSU) one of the winner.
 
 - Demonstation Video:  https://www.youtube.com/watch?v=Emdr7-N7jkw
 - Devpost Subbmision: http://devpost.com/software/areyoualive
+
+# UNMAINTAINED
+
+The project is totally unmaintained at this time. Probably discontinued.
